@@ -1,17 +1,17 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
+import 'react-native-gesture-handler';
 
 import React from 'react';
-import {View} from 'react-native';
+import {View, StatusBar} from 'react-native';
 
-declare const global: {HermesInternal: null | {}};
+import {NavigationContainer} from '@react-navigation/native';
+import Routes from './routes';
 
-const App: React.FC = () => <View />;
+const App: React.FC = () => (
+  <NavigationContainer>
+    <StatusBar barStyle="light-content" backgroundColor="#312e38" />
+    <View style={{flex: 1, backgroundColor: '#312e38'}}>
+      <Routes />
+    </View>
+  </NavigationContainer>
+);
 export default App;

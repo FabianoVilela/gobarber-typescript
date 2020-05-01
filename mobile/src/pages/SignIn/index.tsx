@@ -3,6 +3,7 @@ import {
   Image,
   KeyboardAvoidingView,
   ScrollView,
+  Platform,
   View,
   TextInput,
 } from 'react-native';
@@ -36,7 +37,10 @@ const SignIn: React.FC = () => {
 
   return (
     <>
-      <KeyboardAvoidingView style={{flex: 1}} enabled>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'android' ? undefined : 'padding'}
+        style={{flex: 1}}
+        enabled>
         <ScrollView
           keyboardShouldPersistTaps="handled"
           contentContainerStyle={{flex: 1}}>

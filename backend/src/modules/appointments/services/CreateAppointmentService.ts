@@ -1,6 +1,6 @@
 import { startOfHour } from 'date-fns';
 
-import IAppointmentRepository from '@modules/appointments/repositories/IAppointmentsRepository';
+import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 import Appointment from '@modules/appointments/infra/typeorm/entities/Appointment';
 
 import AppError from '@shared/errors/AppError';
@@ -11,7 +11,7 @@ interface IRequest {
 }
 
 class CreateAppointmentService {
-  constructor(private appointmentsRepository: IAppointmentRepository) {}
+  constructor(private appointmentsRepository: IAppointmentsRepository) {}
 
   public async execute({ date, provider_id }: IRequest): Promise<Appointment> {
     const appointmentDate = startOfHour(date);
